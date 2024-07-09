@@ -4,7 +4,12 @@
 
     <Page id="page" title="{i18n>title}">
         <content>
-            <Text id="_IDGenText1" text="The world is mine!"></Text>
+            <Panel id="_Panel1" headerText="{i18n>selectionScreen}" expandable="false">
+                <Label id="lblShipName" text="{i18n>shipName}" labelFor="txtShipName" class="sapUiMediumMarginBeginEnd"/>
+                <Input id="txtShipName" width="200px" class="sapUiMediumMarginEnd"/>
+                 <Label id="lblCountry" text="{i18n>country}" labelFor="txtCountry" class="sapUiMediumMarginBeginEnd"/>
+                <Input id="txtCountry" width="200px" /> 
+            </Panel>
         </content>
     </Page>
 
