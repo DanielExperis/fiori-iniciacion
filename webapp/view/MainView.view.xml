@@ -6,17 +6,20 @@
     <Page id="page" title="{i18n>title}">
         <content>
             <Panel id="_Panel1" headerText="{i18n>selectionScreen}" expandable="false">
-                <Label id="lblShipName" text="{i18n>shipName}" labelFor="txtShipName" class="sapUiMediumMarginBeginEnd"/>
-                <Input id="txtShipName" width="200px" class="sapUiMediumMarginEnd"/>
-                <Label id="lblCountry" text="{i18n>country}" labelFor="txtCountry" class="sapUiMediumMarginBeginEnd"/>
+                <Label id="lblShipName" text="{i18n>shipName}" labelFor="txtShipName" class="sapUiSmallMarginBeginEnd"/>
+                <Input id="txtShipName" value="{selectionScreen>/ShipName}" width="200px" class="sapUiSmallMarginEnd"/>
+                <Label id="lblCountry" text="{i18n>country}" labelFor="txtCountry" class="sapUiSmallMarginBeginEnd"/>
                 <Select id="selCountry" 
                         selectedKey="{selectionScreen>/CountryKey}" 
                         forceSelection="false" 
-                        items="{selectionScreen>/Countries}">
+                        items="{selectionScreen>/Countries}"
+                        class="sapUiSmallMarginEnd">
                     <items>
                         <core:Item id="_IDGenItem" key="{selectionScreen>key}" text="{selectionScreen>text}" />
                     </items>        
                 </Select> 
+                <Button id="btnFilter" text="{i18n>btnFilter}" icon="sap-icon://filter" press="onFilter" class="sapUiSmallMarginBeginEnd" />  
+                <Button id="btnClearFilters" text="{i18n>btnClearFilters}" icon="sap-icon://clear-filter" press="onClearFilters" class="sapUiSmallMarginEnd" /> 
             </Panel>
         </content>
     </Page>
