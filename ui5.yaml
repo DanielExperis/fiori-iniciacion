@@ -10,6 +10,9 @@ server:
       afterMiddleware: compression
       configuration:
         ignoreCertError: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
+        backend:
+        - path: /V2 # /sap/opu/odata # Sistemas onPremise
+          url: http://northwind.dest # http://localhost # Sistemas onPremise
         ui5:
           path:
             - /resources

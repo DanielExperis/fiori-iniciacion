@@ -21,6 +21,28 @@
                 <Button id="btnFilter" text="{i18n>btnFilter}" icon="sap-icon://filter" press="onFilter" class="sapUiSmallMarginBeginEnd" />  
                 <Button id="btnClearFilters" text="{i18n>btnClearFilters}" icon="sap-icon://clear-filter" press="onClearFilters" class="sapUiSmallMarginEnd" /> 
             </Panel>
+
+            <Panel id="_IDGenPanel1">
+                <List id="invoicesList" 
+                      headerText="{i18n>invoicesHeaderList}" 
+                      class="sapUiResponsiveMargin" 
+                      width="auto" 
+                      items="{/Invoices}">
+                    <items>
+                        <ObjectListItem id="_IDGenObjectListItem1" 
+                                        title="{ShipName} - {Country}"
+                                        number="{parts: [{path:'ExtendedPrice'},
+                                                          {path:'selectionScreen>/Currency'}],
+                                                 type:'sap.ui.model.type.Currency',
+                                                 formatOptions:{
+                                                    showMeasure: false
+                                                 }}"
+                                        numberUnit="{selectionScreen>/Currency}"
+                                        numberState="{= ${ExtendedPrice} > 100 ? 'Success' : 'Warning'}">
+                        </ObjectListItem>
+                    </items>
+                </List>
+            </Panel>
         </content>
     </Page>
 
