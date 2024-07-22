@@ -3,7 +3,9 @@
   "sap.app": {
     "id": "daniexamples.invoices",
     "type": "application",
-    "i18n": "i18n/i18n.properties",
+    "i18n": {
+      "bundleName": "daniexamples.invoices.i18n.i18n"
+    },
     "applicationVersion": {
       "version": "0.0.1"
     },
@@ -17,7 +19,7 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/V2/Northwind/Northwind.svc/",
+        "uri": "/V3/Northwind/Northwind.svc/",
         "type": "OData",
         "settings": {
           "annotations": [],
@@ -46,7 +48,7 @@
   "sap.ui5": {
     "flexEnabled": true,
     "dependencies": {
-      "minUI5Version": "1.125.1",
+      "minUI5Version": "1.126.0",
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
@@ -66,7 +68,9 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "daniexamples.invoices.i18n.i18n"
+          "bundleName": "daniexamples.invoices.i18n.i18n",
+          "supportedLocales": ["es","en"],
+          "fallbackLocale": "es"
         }
       },
       "": {

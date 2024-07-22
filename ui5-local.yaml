@@ -6,7 +6,7 @@ metadata:
 type: application
 framework:
   name: SAPUI5
-  version: 1.125.1
+  version: 1.126.0
   libraries:
     - name: sap.m
     - name: sap.ui.core
@@ -30,8 +30,9 @@ server:
       configuration:
         ignoreCertError: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
         backend:
-        - path: /V2 # /sap/opu/odata # Sistemas onPremise
-          url: http://northwind.dest # http://localhost # Sistemas onPremise
+        - path: /V3 # /sap/opu/odata # Sistemas onPremise
+          url: https://services.odata.org # http://localhost # Sistemas onPremise
+          destination: Northwind 
     - name: fiori-tools-preview
       afterMiddleware: fiori-tools-appreload
       configuration:
